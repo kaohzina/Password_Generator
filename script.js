@@ -4,64 +4,55 @@ window.alert("Select the criteria you would like for your generated password.");
 
 //Define the constants for each prompt
 
-const uppercaseLetters = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z]
-const lowercaseLetters = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
-const numbers = [0,1,2,3,4,5,6,7,8,9]
+//const uppercaseLetters = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z]
+//const lowercaseLetters = [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z]
+//const numbers = [0,1,2,3,4,5,6,7,8,9]
 //const specialCharacters = [~,!,@,#,$,%,^,&,*,(,),_,+]
 
-//Prompted criteria will be used in if/else statements.
-const uppercasePrompt = window.confirm("Would you like to use upper case letters?");
-if (confirm) {
 
+    var uppercaseStyle = function() {
+    var upperCase = window.confirm("Do you want uppercase letters in your generated password?");
+    if (upperCase === true) {
+    window.alert('You have chosen to have uppercase letters in your generated password!')
+  }
+    else {
+    window.alert('You have chosen NOT to have uppercase letters in your generated password!')
+  }
 }
-else{ 
+uppercaseStyle();
 
-};
-
-const lowercasePrompt = window.confirm("Would you like to use lower case letters?");
-if (confirm) {
-
+    var lowercaseStyle = function() {
+    var lowerCase = window.confirm("Do you want lowercase letters in your generated password?");
+    if (lowerCase === true) {
+    window.alert('You have chosen to have lowercase letters in your generated password!')
+  }
+    else {
+    window.alert('You have chosen NOT to have lowercase letters in your generated password!')
+  }
 }
-else{ 
+lowercaseStyle();
 
-};
-
-const numbersPrompt = window.confirm("Would you like to use numbers?");
-if (confirm) {
-
+    var numberStyle = function() {
+    var numberCase = window.confirm("Do you want numbers in your generated password?");
+    if (numberCase === true) {
+    window.alert('You have chosen to have numbers in your generated password!')
+  }
+    else {
+    window.alert('You have chosen NOT to have numbers in your generated password!')
+  }
 }
-else{ 
+numberStyle();
 
-};
-
-const specialPrompt = window.confirm("Would you like to use special characters?");
-if (confirm) {
-
+    var specialStyle = function() {
+    var specialCase = window.confirm("Do you want special letters in your generated password?");
+    if (specialCase === true) {
+    window.alert('You have chosen to have special letters in your generated password!')
+  }
+    else {
+    window.alert('You have chosen NOT to have special letters in your generated password!')
+  }
 }
-else{ 
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+specialStyle();
 
 
 
