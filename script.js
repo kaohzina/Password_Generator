@@ -10,48 +10,35 @@ function getNumber (){return Numbers[Math.floor(Math.random() * Numbers.length)]
 function getSymbol (){return specialCharacters[Math.floor(Math.random() * specialCharacters.length)];}
 function getLength (){return lengthCase}
 
-  function passwordCriteria(){
-    var lengthCase = window.prompt("How many characters do you want in your password? Choose from 8-128 characters.")
-    if (lengthCase < 8 || lengthCase > 128){ window.alert("Your generated password needs to have a length of 8-128 characters.");
-    }
-    else { var lengthcase = length;
-    }
-  
-    var upperCase = window.confirm("Do you want uppercase letters in your generated password?");
-    if (upperCase === true) { var upper = true;
-    }
-    else { var upper = false;
-    }
+function passwordCriteria(){
+      var lengthCase = window.prompt("How many characters do you want in your password? Choose from 8-128 characters.")
+      if (lengthCase < 8 || lengthCase > 128){ window.alert("Your generated password needs to have a length of 8-128 characters.");
+      }
+      else { var lengthcase = length;
+      }
 
-    var lowerCase = window.confirm("Do you want lowercase letters in your generated password?");
-    if (lowerCase === true) { var lower = true;
-    }
-    else { var lower = false;
-    }
-  
-    var numberCase = window.confirm("Do you want numbers in your generated password?");
-    if (numberCase === true) { 
-    }
-    else { 
-    }
-  
-    var symbolCase = window.confirm("Do you want special letters in your generated password?");
-    if (symbolCase === true) {
-    }
-    else {
-    }
+      var upperCase = window.confirm("Do you want uppercase letters in your generated password?");
+      var lowerCase = window.confirm("Do you want lowercase letters in your generated password?");
+      var numberCase = window.confirm("Do you want numbers in your generated password?");
+      var symbolCase = window.confirm("Do you want special letters in your generated password?");
 
-    var requestedCriteria = {
-    length: getLength,
-    lower: lowerCase,
-    upper: upperCase,
-    number: numberCase,
-    symbol: symbolCase
-    };
-    return requestedCriteria;
-  }
-passwordCriteria();
+      var requestedCriteria = {
+      length: getLength,
+      lower: lowerCase,
+      upper: upperCase,
+      number: numberCase,
+      symbol: symbolCase
+      };
+      return requestedCriteria;
+      }
+      
+      passwordCriteria();
     
+  function test(){
+  var criteria = passwordCriteria()
+  console.log(criteria)
+}console.log(test());
+
 
 
 // Get references to the #generate element
