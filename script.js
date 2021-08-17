@@ -1,7 +1,7 @@
-var Letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var Numbers = [0,1,2,3,4,5,6,7,8,9]
-var specialCharacters = ["~","!","@","#","$","%","^","&","*","(",")","_","+"]
-var capitalLetters = Letters.map(function(x){return x.toUpperCase();});
+const Letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+const Numbers = [0,1,2,3,4,5,6,7,8,9]
+const specialCharacters = ["~","!","@","#","$","%","^","&","*","(",")","_","+"]
+const capitalLetters = Letters.map(function(x){return x.toUpperCase();});
 
 //functions to receive requested criteria
 function getLowerLetter (){return Letters[Math.floor(Math.random() * Letters.length)];}
@@ -11,35 +11,39 @@ function getSymbol (){return specialCharacters[Math.floor(Math.random() * specia
 function getLength (){return lengthCase}
 
 function passwordCriteria(){
-      var lengthCase = window.prompt("How many characters do you want in your password? Choose from 8-128 characters.")
+      const lengthCase = window.prompt("How many characters do you want in your password? Choose from 8-128 characters.")
       if (lengthCase < 8 || lengthCase > 128){ window.alert("Your generated password needs to have a length of 8-128 characters.");
       }
-      else { var lengthcase = length;
+      else { const lengthcase = length;
       }
 
-      var upperCase = window.confirm("Do you want uppercase letters in your generated password?");
-      var lowerCase = window.confirm("Do you want lowercase letters in your generated password?");
-      var numberCase = window.confirm("Do you want numbers in your generated password?");
-      var symbolCase = window.confirm("Do you want special letters in your generated password?");
+      const upperCase = window.confirm("Do you want uppercase letters in your generated password?");
+      const lowerCase = window.confirm("Do you want lowercase letters in your generated password?");
+      const numberCase = window.confirm("Do you want numbers in your generated password?");
+      const symbolCase = window.confirm("Do you want special letters in your generated password?");
 
-      var requestedCriteria = {
+      //requestedCriteria is an array that lists the following as true or false and applies the rules to make a new password. 
+    const requestedCriteria = {
       length: getLength,
       lower: lowerCase,
       upper: upperCase,
       number: numberCase,
       symbol: symbolCase
-      };
-      return requestedCriteria;
-      }
-      
-      passwordCriteria();
+    };
+} 
     
   function test(){
-  var criteria = passwordCriteria()
+  const Criteria = passwordCriteria()
   console.log(criteria)
 }console.log(test());
 
+function generatePassword(){
+  requestedCriteria;
+}
 
+
+// Everything below this line is given 
+// _______________________
 
 // Get references to the #generate element
 const generateBtn = document.querySelector("#generate");
