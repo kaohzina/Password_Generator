@@ -1,21 +1,18 @@
 //defining the values in the array lists. 
 var newPassword = ""
 var combinedArray = [];
+
 // 0 to 25 in the array 
 const Letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
 // 0 to 10 in the array
 const Numbers = ["0","1","2","3","4","5","6","7","8","9"]
+
 // 0 to 12 in the array 
 const Symbols = ["~","!","@","#","$","%","^","&","*","(",")","_","+"]
+
 // capital letters are the same amount as the lowercase letters. 
 const capitalLetters = Letters.map(function(x){return x.toUpperCase();});
-
-//functions to receive requested criteria
-function getLowerLetter (){return Letters[Math.floor(Math.random() * Letters.length)];}
-function getUpperLetter (){return capitalLetters[Math.floor(Math.random() * capitalLetters.length)];}
-function getNumber (){return Numbers[Math.floor(Math.random() * Numbers.length)];}
-function getSymbol (){return Symbols[Math.floor(Math.random() * Symbols.length)];}
-
 
 function generatePassword(){
   newPassword = ""
@@ -33,7 +30,8 @@ function generatePassword(){
     lower: lowerCase,
     upper: upperCase,
     number: numberCase,
-    symbol: symbolCase};
+    symbol: symbolCase
+  };
   
     if (lowerCase == true) {
       combinedArray = combinedArray.concat(Letters)
@@ -47,23 +45,13 @@ function generatePassword(){
     if (symbolCase == true) {
       combinedArray = combinedArray.concat(Symbols)
     }
-  
+
     for (var i = 0; i < lengthCase; i ++) {
       newPassword = newPassword + combinedArray[Math.floor(Math.random() * combinedArray.length)];
     }
-    
-  console.log(combinedArray);
-  console.log(requestedCriteria);
-  console.log(getLowerLetter());
-  console.log(getUpperLetter());
-  console.log(getNumber());
-  console.log(getSymbol());
-  console.log(lengthCase);
   return newPassword;
-// make a new array with the criteria values 
+
 }
-// Everything below this line is given 
-// _______________________
 
 // Get references to the #generate element
 const generateBtn = document.querySelector("#generate");
